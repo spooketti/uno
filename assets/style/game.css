@@ -1,0 +1,58 @@
+#CurrentHand
+{
+    position:fixed;
+    bottom:10px;
+    background-color: green;
+    height:170px;
+    width:500px;
+    left:calc(50% - 250px);
+}
+
+.Card
+{
+    height:170px;
+    width:100px;
+    border-radius: 5px;
+    background-color: red;
+    outline:black 1px solid;
+    border:white 3px solid;
+    position:relative;
+}
+
+.CardCenter
+{
+    border-radius: 50%;
+    background-color: white;
+    height: 125px;
+    width: 70px;
+    position: absolute;
+    left: 16px;
+    transform: rotate(38deg);
+    top: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardCenter span
+{
+    color:red;
+    font-size: 300%;
+    transform: rotate(322deg);
+}
+
+.TopSymbol
+{
+    position: absolute;
+    left:3px;
+    top:3px;
+    color:white;
+}
+
+.BottomSymbol
+{
+    position: absolute;
+    right:3px;
+    bottom:3px;
+    color:white;
+}
