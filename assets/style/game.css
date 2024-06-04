@@ -2,10 +2,11 @@
 {
     position:fixed;
     bottom:10px;
-    background-color: green;
     height:170px;
     width:500px;
     left:calc(50% - 250px);
+    display: flex;
+    justify-content: center;
 }
 
 .Card
@@ -13,10 +14,23 @@
     height:170px;
     width:100px;
     border-radius: 5px;
-    background-color: red;
+    background-color: var(--card-color);
     outline:black 1px solid;
     border:white 3px solid;
-    position:relative;
+    position:absolute;
+    transition: all .25s;
+}
+
+.PlayingCard:hover
+{
+   translate: 0px -30px;
+   box-shadow: rgba(226, 196, 3, 0.619) 0 0 8px 8px;
+   cursor: pointer;
+}
+
+.Card span
+{
+    user-select: none;
 }
 
 .CardCenter
@@ -36,7 +50,7 @@
 
 .CardCenter span
 {
-    color:red;
+    color:var(--card-color);
     font-size: 300%;
     transform: rotate(322deg);
 }
@@ -55,4 +69,93 @@
     right:3px;
     bottom:3px;
     color:white;
+    transform: rotate(180deg);
+}
+
+#DepositWrapper
+{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.RedCard
+{
+    --card-color:#e42424;
+}
+
+.BlueCard
+{
+    --card-color:#242be4;
+}
+
+.GreenCard
+{
+    --card-color:#3dc64d;
+}
+
+.YellowCard
+{
+    --card-color:#edda46;
+}
+
+.BlackCard
+{
+    --card-color:#000000;
+}
+
+.DepositCard
+{
+    transform: rotateX(65deg) rotateZ(274deg);
+    pointer-events: none;
+}
+
+.WildCenter
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+    border:2.5px solid white;
+    left:12.5px;
+}
+
+.WildCenterCorner
+{
+    height:100%;
+    width:100%;
+    background-color: var(--card-color);
+}
+
+.BlackCard:hover {
+    background: linear-gradient(279deg, #db2b2b, #dba12b, #e8da17, #29c718, #1886c7, #9c37e0, #da1313);
+    background-size: 1400% 1400%;
+
+    -webkit-animation: RainbowCard 7s ease infinite;
+    -moz-animation: RainbowCard 7s ease infinite;
+    animation: RainbowCard 7s ease infinite;
+}
+
+@-webkit-keyframes RainbowCard {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes RainbowCard {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes RainbowCard {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes cardHover {
+    to {
+        translate: 0px -30px;
+    }
 }
